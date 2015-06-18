@@ -34,6 +34,7 @@
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="http://code.highcharts.com/modules/heatmap.js"></script>
         <script type="text/javascript" src="https://code.highcharts.com/modules/treemap.js"></script>
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript">
@@ -41,9 +42,9 @@
             {
 
                 app.initialize();
-                app.loadData(function(response)
+                app.loadData(function(data)
                 {
-                    app.render(response);
+                    app.render(data);
                 });
 
             });

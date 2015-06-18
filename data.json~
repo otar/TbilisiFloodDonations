@@ -293,6 +293,7 @@
 		{
 			"name": "Tegeta",
 			"value": 10,
+			"color": "#1F3240",
 			"info": {
 				"url": "http://www.tegetamotors.ge/",
 				"logo": "http://www.tegetamotors.ge/skins/default/images/logo.png"
