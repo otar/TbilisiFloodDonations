@@ -11,7 +11,7 @@ var app = {
             app.chart = $('#container');
         }
 
-        app.chart.text('Loading...');
+        // app.chart.text('Loading...');
 
     },
 
@@ -22,57 +22,58 @@ var app = {
 
     },
 
-    render: function()
+    render: function(response)
     {
 
-
-        app.loadData(function(response)
+        if (
+               typeof response === 'undefined'
+            || typeof response.data === 'undefined'
+            || !response.data.length
+        )
         {
+            return;
+        }
 
-            app.chart.highcharts({
-                tooltip: {
-                    useHTML: true,
-                    formatter: function ()
-                    {
-                        var result = '<b style="font-size:16px"><a target="_blank" href="' + this.point.info.url + '">' + this.point.name + '</a>' + ' - ' + this.point.value + ' 000 ლარი</b>';
-                        result += '<br/>';
-                        result += '<br/>';
-                        result += '<img src="' + this.point.info.logo + '"></img>';
-                        return result;
-                    }
-                },
-                series: [{
-                    type: 'treemap',
-                    alternateStartingDirection: true,
-                    layoutAlgorithm: 'squarified',
-                    levels: [{
-                        level: 1,
-                        dataLabels: {
-                            style: {
-                                fontSize: '16px'
-                            }
-                        }
-                    }],
-                    data: response.data
-                }],
-                title: {
-                    text: ''
-                }, credits: {
-                    enabled: false
+        var options = {
+            tooltip: {
+                useHTML: true,
+                formatter: function()
+                {
+                    var html = [];
+                    html.push('<div class="tooltip group">');
+                        html.push('<div class="label">');
+                            html.push('<a target="_blank" href="' + this.point.info.url + '">' + this.point.name + '</a>');
+                            html.push(' - ');
+                            html.push(this.point.value + ' 000 ლარი');
+                        html.push('</div>');
+                        html.push('<img src="' + this.point.info.logo + '" class="logo" />');
+                    html.push('</div>');
+                    return html.join('');
                 }
-            });
+            },
+            series: [{
+                type: 'treemap',
+                alternateStartingDirection: true,
+                layoutAlgorithm: 'squarified',
+                levels: [{
+                    level: 1,
+                    dataLabels: {
+                        style: {
+                            fontSize: '16px'
+                        }
+                    }
+                }],
+                data: response.data
+            }],
+            title: {
+                text: ''
+            }, credits: {
+                enabled: false
+            }
+        };
 
-        });
-
+        app.chart.highcharts(options);
 
     }
 
 };
-
-$(function()
-{
-
-    app.initialize();
-    app.render();
-
-});
