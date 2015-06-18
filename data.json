@@ -14,11 +14,6 @@
 			"info": {
 				"url": "http://casinoadjara.com/",
 				"logo": "http://casinoadjara.com/images/logo_mf.png"
-			},
-			"dataLabels": {
-				"style": {
-					"fontSize": "32px"
-				}
 			}
 		},
 		{
@@ -283,11 +278,6 @@
 			"info": {
 				"url": "http://www.toyota.ge/",
 				"logo": "http://www.macdonaldautogroup.com/macdonald/toyota/wp-content/themes/breton-toyota/library/images/toyota.png"
-			},
-			"dataLabels": {
-				"style": {
-					"fontSize": "12px"
-				}
 			}
 		},
 		{
@@ -336,11 +326,6 @@
 			"info": {
 				"url": "http://crystal.ge/ka/",
 				"logo": "http://crystal.ge/skins/default/img/logo_ka.png"
-			},
-			"dataLabels": {
-				"style": {
-					"fontSize": "8px"
-				}
 			}
 		},
 		{
@@ -349,11 +334,6 @@
 			"info": {
 				"url": "http://gldanisshaurma.gweb.ge/",
 				"logo": "http://static.gweb.ge/buffer/pictures/logo/68574499959ecdc44adb7d2bf0f6272e.jpg"
-			},
-			"dataLabels": {
-				"style": {
-					"fontSize": "10px"
-				}
 			}
 		},
 		{
@@ -362,11 +342,6 @@
 			"info": {
 				"url": "http://zodi.ge/ge/index",
 				"logo": "http://zodi.ge/img/logo.png"
-			},
-			"dataLabels": {
-				"style": {
-					"fontSize": "10px"
-				}
 			}
 		}
 	]

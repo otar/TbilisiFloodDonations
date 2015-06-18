@@ -48,7 +48,7 @@ var app = {
             {
                 from: 0,
                 to: 10,
-                fontSize: 10
+                fontSize: 8
             },
             {
                 from: 10,
@@ -58,27 +58,27 @@ var app = {
             {
                 from: 25,
                 to: 50,
-                fontSize: 12
+                fontSize: 14
             },
             {
                 from: 50,
                 to: 100,
-                fontSize: 13
+                fontSize: 16
             },
             {
                 from: 100,
                 to: 300,
-                fontSize: 14
+                fontSize: 20
             },
             {
                 from: 300,
                 to: 1000,
-                fontSize: 15
+                fontSize: 25
             },
             {
                 from: 1000,
                 to: 99999999,
-                fontSize: 16
+                fontSize: 30
             },
         ];
 
@@ -131,12 +131,9 @@ var app = {
                 {
                     var html = [];
                     html.push('<div class="tooltip group">');
-                        html.push('<div class="label">');
-                            html.push('<a target="_blank" href="' + this.point.info.url + '">' + this.point.name + '</a>');
-                            html.push(' - ');
-                            html.push(this.point.value + ' 000 ლარი');
-                        html.push('</div>');
-                        html.push('<img src="' + this.point.info.logo + '" class="logo" />');
+                        html.push('<a class="label group" target="_blank" href="' + this.point.info.url + '">' + this.point.name + '</a>');
+                        html.push('<div class="donation group">' + this.point.value + ' 000 ლარი</div>');
+                        html.push('<div class="logo group" style="background-image: url(' + this.point.info.logo + ');"></div>');
                     html.push('</div>');
                     return html.join('');
                 }
