@@ -3,11 +3,8 @@ var app = {
 
     chart: null,
 
-    initialize: function()
-    {
-
-        if (app.chart === null)
-        {
+    initialize: function () {
+        if (app.chart === null) {
             app.chart = $('#container');
         }
 
@@ -15,11 +12,8 @@ var app = {
 
     },
 
-    loadData: function(callback)
-    {
-
+    loadData: function (callback) {
         $.getJSON('data.json', callback);
-
     },
 
     render: function(response)
@@ -75,5 +69,4 @@ var app = {
         app.chart.highcharts(options);
 
     }
-
 };
